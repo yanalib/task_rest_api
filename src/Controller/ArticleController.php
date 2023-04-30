@@ -52,7 +52,7 @@ class ArticleController extends AbstractController
                 'content'    => $oArticle->getContent(),
                 'created_at' => $this->formatDate( $oArticle->getCreatedAt(), $serializer ),
                 'publish_at' => $this->formatDate( $oArticle->getPublishAt(), $serializer ),
-                'status'     => $oArticle->getStatus(),
+                'status'     => $oArticle->getStatus()
             ];
         }
 
@@ -147,8 +147,9 @@ class ArticleController extends AbstractController
                 'id'      => $oArticle->getId(),
                 'title'   => $oArticle->getTitle(),
                 'content' => $oArticle->getContent(),
-                'status' => $oArticle->getStatus(),
-                'created_at' => $oArticle->getCreatedAt(),
+                'created_at' => $this->formatDate( $oArticle->getCreatedAt(), $serializer ),
+                'publish_at' => $this->formatDate( $oArticle->getPublishAt(), $serializer ),
+                'status'     => $oArticle->getStatus()
             ];
         }
 
